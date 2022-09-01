@@ -44,14 +44,14 @@ This README.md page in your own repository should be edited to include the work 
 
 \*\***Describe your setting, players, activity and goals here.**\*\*
 
-1.	The main character of my story is a Leprechaun. The settings are the different colored lands he ventures to. His goal in each land is to become that color.
+1.	The main character of my story is a Leprechaun. The settings are the different colored lands he ventures to. His goal in each land is to become that color. He has a special power which is chameleon powers.
 
 
 
 
 \*\***Include pictures of your storyboards here**\*\*
 
-Storyboard can be found in the .pptx file within Lab 1 folder
+Storyboard can be found in the .pptx file within Lab 1 Part 1 folder
 
 \*\***Summarize feedback you got here.**\*\*
 
@@ -73,7 +73,7 @@ No specific feedback was received
 
 \*\***Give us feedback on Tinkerbelle.**\*\*
 
-1.	Tinkerbelle is fairly easy to use and setup.
+1.	Tinkerbelle is fairly easy to use and setup. It would be cool to include or have the option to add more features.
 
 ## Part D. Wizard the device
 
@@ -99,8 +99,7 @@ The main influence is the hat which is inspired by the lucky charms Leperchaun.
 
 \*\***Take a video of your prototyped interaction.**\*\*
 
-Final video is included as an .mp4 within the Lab 1 folder.
-
+This can be found in the .MOV file within Lab 1 Part 1 folder.
 
 
 
@@ -123,3 +122,7 @@ Do last week’s assignment again, but this time:
 3) We will be grading with an emphasis on creativity. 
 
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
+
+Updated storyboard can be found in folder Part 2, FinalStoryboard
+
+Final video can be found in folder Part 2, FinalVideo
