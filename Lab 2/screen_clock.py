@@ -100,14 +100,14 @@ buttonB.switch_to_input()
 
 
 # Image to represent each Season
-image_Summer = Image.open("red.jpg")
-image_Summer = image_Summer.resize((50, 50), Image.BICUBIC)
-image_Fall = Image.open("red.jpg")
-image_Fall = image_Fall.resize((50, 50), Image.BICUBIC)
-image_Winter = Image.open("red.jpg")
-image_Winter = image_Winter.resize((50, 50), Image.BICUBIC)
-image_Spring = Image.open("red.jpg")
-image_Spring = image_Spring.resize((50, 50), Image.BICUBIC)
+image_Summer = Image.open("summer.jpg")
+image_Summer = image_Summer.resize((100, 100), Image.BICUBIC)
+image_Fall = Image.open("fall.jpg")
+image_Fall = image_Fall.resize((100, 100), Image.BICUBIC)
+image_Winter = Image.open("winter.jpg")
+image_Winter = image_Winter.resize((100, 100), Image.BICUBIC)
+image_Spring = Image.open("spring.jpg")
+image_Spring = image_Spring.resize((100, 100), Image.BICUBIC)
 
 #Datetime to represent start of each next season
 nextSummer = datetime(2023, 6, 21)
@@ -125,14 +125,14 @@ seasonsList = [("Summer",nextSummer,image_Summer),
                ("Spring",nextSpring,image_Spring)]
 
 currSeason = 0
-
+clearflag = 0
 while True:
+    
     #Displays Image representing season
     if not buttonA.value:
-        disp.image(seasonsList[currSeason][2])
+#         disp.image(seasonsList[currSeason][2])
     #Switches Season
-
-    else:
+        clearflag = 1
         image = Image.new("RGB", (width, height))
         draw = ImageDraw.Draw(image)
 
@@ -146,7 +146,7 @@ while True:
         y = top
         
         sznstring = seasonsList[currSeason][0]
-        draw.text((0,0),"Time Until "+str(sznstring), font=font, fill="#FFFFFF")
+        draw.text((0,0),"Time Until Next "+str(sznstring), font=font, fill="#FFFFFF")
         draw.text((0, 25),"Days: "+str(td.days) , font=font, fill="#FFFFFF")
         draw.text((0, 50),"HMS: "+str(timedelta(seconds=td.seconds)) , font=font, fill="#FFFFFF")
         
@@ -154,8 +154,17 @@ while True:
         disp.image(image, rotation)
 
         time.sleep(1)
+
+    else:
+        if clearflag==1:
+            image = Image.new("RGB", (width, height))
+            draw = ImageDraw.Draw(image)
+            draw.rectangle((0, 0, width, height), outline=0, fill=0)
+            disp.image(image, rotation)
+            clearflag = 0
+            
+        disp.image(seasonsList[currSeason][2])
         if not buttonB.value:
-            print("here")
             if currSeason == 3:
                 currSeason = 0
             else:
