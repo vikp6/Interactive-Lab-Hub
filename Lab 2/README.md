@@ -206,7 +206,10 @@ After that, Git will ask you to login to your GitHub account to push the updates
 ## Part F. 
 ## Make a short video of your modified barebones PiClock
 
+![alt text](https://github.com/vikp6/Interactive-Lab-Hub/blob/Fall2022/Lab%202/IMG_4138.jpeg?raw=true)
+
 \*\*\***Take a video of your PiClock.**\*\*\*
+Image can be found at link below:
 https://drive.google.com/file/d/1uqGVkOnY8nmhAnSBt_DKW5oiLZYO1PZt/view?usp=sharing
 
 ## Part G. 
