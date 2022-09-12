@@ -190,6 +190,7 @@ Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www
 
 
 \*\*\***A copy of your code should be in your Lab 2 Github repo.**\*\*\*
+Custom clock code can be found in custom_clock.py
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
 
@@ -206,6 +207,7 @@ After that, Git will ask you to login to your GitHub account to push the updates
 ## Make a short video of your modified barebones PiClock
 
 \*\*\***Take a video of your PiClock.**\*\*\*
+https://drive.google.com/file/d/1uqGVkOnY8nmhAnSBt_DKW5oiLZYO1PZt/view?usp=sharing
 
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
