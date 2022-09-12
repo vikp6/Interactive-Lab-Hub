@@ -7,6 +7,8 @@ import adafruit_rgb_display.st7789 as st7789
 from time import strftime, sleep
 from adafruit_rgb_display.rgb import color565
 import webcolors
+from datetime import datetime
+from datetime import timedelta
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -37,6 +39,10 @@ disp = st7789.ST7789(
 height = disp.width  # we swap height/width to rotate it to landscape!
 width = disp.height
 image = Image.new("RGB", (width, height))
+
+
+
+
 rotation = 90
 
 # Get drawing object to draw on image.
@@ -49,26 +55,26 @@ disp.image(image, rotation)
 # draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 # disp.image(image)
 
-image = Image.open("red.jpg")
-backlight = digitalio.DigitalInOut(board.D22)
-backlight.switch_to_output()
-backlight.value = True
+# image = Image.open("red.jpg")
+# backlight = digitalio.DigitalInOut(board.D22)
+# backlight.switch_to_output()
+# backlight.value = True
+# image = image.resize((50, 50), Image.BICUBIC)
 
-# Scale the image to the smaller screen dimension
-image_ratio = image.width / image.height
-screen_ratio = width / height
-if screen_ratio < image_ratio:
-    scaled_width = image.width * height // image.height
-    scaled_height = height
-else:
-    scaled_width = width
-    scaled_height = image.height * width // image.width
-image = image.resize((scaled_width/2, scaled_height/2), Image.BICUBIC)
+# # Scale the image to the smaller screen dimension
+# image_ratio = image.width / image.height
+# screen_ratio = width / height
+# if screen_ratio < image_ratio:
+#     scaled_width = image.width * height // image.height
+#     scaled_height = height
+# else:
+#     scaled_width = width
+#     scaled_height = image.height * width // image.width
 
 # Crop and center the image
-x = scaled_width // 2 - width // 2
-y = scaled_height // 2 - height // 2
-image = image.crop((x, y, x + width, y + height))
+# x = scaled_width // 2 - width // 2
+# y = scaled_height // 2 - height // 2
+# image = image.crop((x, y, x + width, y + height))
 
 # Draw some shapes.
 # First define some constants to allow easy resizing of shapes.
@@ -92,17 +98,67 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
-while True:
-    # Draw a black filled box to clear the image.
-    #draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-    #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py
-    print (strftime("%m/%d/%Y %H:%M:%S"), end="", flush=True)
-    print("\r", end="", flush=True)
-    y = top
-    draw.text((x, y),strftime("%m/%d/%Y %H:%M:%S") , font=font, fill="#FFFFFF")
-    # Display image.
-    disp.image(image, rotation)
-    time.sleep(1)
-    if buttonB.value:
-        disp.image(image)
+# Image to represent each Season
+image_Summer = Image.open("red.jpg")
+image_Summer = image_Summer.resize((50, 50), Image.BICUBIC)
+image_Fall = Image.open("red.jpg")
+image_Fall = image_Fall.resize((50, 50), Image.BICUBIC)
+image_Winter = Image.open("red.jpg")
+image_Winter = image_Winter.resize((50, 50), Image.BICUBIC)
+image_Spring = Image.open("red.jpg")
+image_Spring = image_Spring.resize((50, 50), Image.BICUBIC)
+
+#Datetime to represent start of each next season
+nextSummer = datetime(2023, 6, 21)
+nextFall = datetime(2022, 9, 22)
+nextWinter = datetime(2022, 12, 21)
+nextSpring = datetime(2023, 3, 21)
+
+
+#0 is Summer, 1 is Fall, 2 is Winter, 3 is Spring
+#List of tuples carrying all season related objects
+
+seasonsList = [("Summer",nextSummer,image_Summer),
+               ("Fall",nextFall,image_Fall),
+               ("Winter",nextWinter,image_Winter),
+               ("Spring",nextSpring,image_Spring)]
+
+currSeason = 0
+
+while True:
+    #Displays Image representing season
+    if not buttonA.value:
+        disp.image(seasonsList[currSeason][2])
+    #Switches Season
+
+    else:
+        image = Image.new("RGB", (width, height))
+        draw = ImageDraw.Draw(image)
+
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+#             print (strftime("%m/%d/%Y %H:%M:%S"), end="", flush=True)
+
+
+        td = seasonsList[currSeason][1] - datetime.now()
+        #print(str(timedelta(seconds=td.seconds)))
+        #print("\r", end="", flush=True)
+        y = top
+        
+        sznstring = seasonsList[currSeason][0]
+        draw.text((0,0),"Time Until "+str(sznstring), font=font, fill="#FFFFFF")
+        draw.text((0, 25),"Days: "+str(td.days) , font=font, fill="#FFFFFF")
+        draw.text((0, 50),"HMS: "+str(timedelta(seconds=td.seconds)) , font=font, fill="#FFFFFF")
+        
+        # Display image.
+        disp.image(image, rotation)
+
+        time.sleep(1)
+        if not buttonB.value:
+            print("here")
+            if currSeason == 3:
+                currSeason = 0
+            else:
+                currSeason += 1
+
+
