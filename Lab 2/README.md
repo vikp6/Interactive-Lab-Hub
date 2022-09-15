@@ -226,6 +226,7 @@ https://drive.google.com/file/d/1uqGVkOnY8nmhAnSBt_DKW5oiLZYO1PZt/view?usp=shari
   
 
 2. Look at and give feedback on the Part G. for at least 2 other people in the class (and get 2 people to comment on your Part G!)
+- Slow down cycling of each season, introduce a delay for the button debounce
 
 # Lab 2 Part 2
 
