@@ -187,7 +187,9 @@ Can you make time interactive? You can look in `screen_test.py` for examples for
 Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www.billverplank.com/IxDSketchBook.pdf)!
 
 **We strongly discourage and will reject the results of literal digital or analog clock display.**
-![alt text](https://github.com/vikp6/Interactive-Lab-Hub/blob/Fall2022/Lab%202/IMG_4138.jpeg?raw=true)
+Sketches for Lab2i:
+![Sketch1](./Sketch1.png "Sketch 1")
+![Sketch2](./Sketch2.png "Sketch 2")
  
 While I was brainstorming how one could uniquely tell that time is passing I thought of the seasons of the year. Having lived in Texas for the past few years, I didn't get to experience all 4 seasons like I would here in the northeast. Now that I'm back, I thought a cool way to keep track of time is knowing how many days until the Next season. That's was the idea behind my custom clock. I attempted to include the image of my sketch in the README however it is not appearing for some reason. It is the file IMG_4138.jpeg in the repo.
 
