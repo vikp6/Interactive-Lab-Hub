@@ -255,6 +255,9 @@ Sketching:
 Idea:
 For this part of the lab, the goal was to make the season selector more interactive and add an additional element. To make it more interactive, I decided to use the proximity/gesture sensor. This was quite straightforward to setup and once I did, it was easy to get codex values for up, down, left, and right. Using this I decided to allow left/right gesture to control switching the seasons. Also, I added a feature where you can input a date such as your birthday and figure out how many days/hours until it.
 
+Code:
+The updated clock code can be found in the filed custom_clock_2.py
+
 Video:
 Here I am including two links that are videos for my features.
 https://drive.google.com/file/d/1hzo4HgVrqywgUVizoeacE5aMnqYeIzZ1/view?usp=sharing
