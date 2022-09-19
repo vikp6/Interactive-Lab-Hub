@@ -191,7 +191,7 @@ Sketches for Lab2i:
 ![Sketch1](./Sketch1.png "Sketch 1")
 ![Sketch2](./Sketch2.png "Sketch 2")
  
-While I was brainstorming how one could uniquely tell that time is passing I thought of the seasons of the year. Having lived in Texas for the past few years, I didn't get to experience all 4 seasons like I would here in the northeast. Now that I'm back, I thought a cool way to keep track of time is knowing how many days until the Next season. That's was the idea behind my custom clock. I attempted to include the image of my sketch in the README however it is not appearing for some reason. It is the file IMG_4138.jpeg in the repo.
+While I was brainstorming how one could uniquely tell that time is passing I thought of the seasons of the year. Having lived in Texas for the past few years, I didn't get to experience all 4 seasons like I would here in the northeast. Now that I'm back, I thought a cool way to keep track of time is knowing how many days until the Next season. That's was the idea behind my custom clock. 
 
 
 \*\*\***A copy of your code should be in your Lab 2 Github repo.**\*\*\*
@@ -213,7 +213,7 @@ After that, Git will ask you to login to your GitHub account to push the updates
 
 
 \*\*\***Take a video of your PiClock.**\*\*\*
-Image can be found at link below:
+Video can be found at link below:
 https://drive.google.com/file/d/1uqGVkOnY8nmhAnSBt_DKW5oiLZYO1PZt/view?usp=sharing
 
 ## Part G. 
@@ -245,5 +245,23 @@ Modify the code from last week's lab to make a new visual interface for your new
 As always, make sure you document contributions and ideas from others explicitly in your writeup.
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
+
+#Lab 2 Part 2 Submission
+
+Sketching:
+![Sketch2](./IDDLab2.png "Sketch 3")
+
+
+Idea:
+For this part of the lab, the goal was to make the season selector more interactive and add an additional element. To make it more interactive, I decided to use the proximity/gesture sensor. This was quite straightforward to setup and once I did, it was easy to get codex values for up, down, left, and right. Using this I decided to allow left/right gesture to control switching the seasons. Also, I added a feature where you can input a date such as your birthday and figure out how many days/hours until it.
+
+Video:
+Here I am including two links that are videos for my features.
+https://drive.google.com/file/d/1hzo4HgVrqywgUVizoeacE5aMnqYeIzZ1/view?usp=sharing
+
+https://drive.google.com/file/d/15oUmFwyQygeS18CbLUybA3Dw8irJD9ZB/view?usp=sharing
+
+Testing:
+I received some feedback that the gesture sensor is slightly finicky. Unfortunately I was unable to make this better for this lab but will look into it in the future to see if there is a more reliable way to capture gestures.
 
 
