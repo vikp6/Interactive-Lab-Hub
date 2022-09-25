@@ -58,6 +58,8 @@ You can also play audio files directly with `aplay filename`. Try typing `aplay 
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
 (This shell file should be saved to your own repo for this lab.)
 
+This custom file is located here: https://github.com/vikp6/Interactive-Lab-Hub/blob/Fall2022/Lab%203/espeak_demo.sh
+
 Bonus: If this topic is very exciting to you, you can try out this new TTS system we recently learned about: https://github.com/rhasspy/larynx
 
 ### Speech to Text
@@ -80,6 +82,8 @@ Now, look at which camera you have. Do you have the cylinder camera (likely the 
 Then try `./vosk_demo_mic.sh`
 
 \*\***Write your own shell file that verbally asks for a numerical based input (such as a phone number, zipcode, number of pets, etc) and records the answer the respondent provides.**\*\*
+
+This custom file is located here: https://github.com/vikp6/Interactive-Lab-Hub/blob/Fall2022/Lab%203/speech2text/zipcode_ask.sh
 
 ### Serving Pages
 
