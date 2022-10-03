@@ -21,24 +21,24 @@ model = Model("model")
 rec = KaldiRecognizer(model, wf.getframerate(), '["oh giants cardinals falcons ravens bills panthers bears bengals browns cowboys broncos lions packers texans colts jaguars chiefs raiders chargers rams dolphins vikings patriots saints jets eagles steelers fortyniners seahawks buccaneers titans washington", "[unk]","giants"]')
 #dict matching team name to abv
 nameToABV = {'giants':'NYG','cardinals':'ARI','falcons':'ATL','ravens':'BAL','bills':'BUF','panthers':'CAR','bears':'CHI','bengals':'CIN','browns':'CLE','cowboys':'DAL','broncos':'DEN','lions':'DET','packers':'GB','texans':'HOU','colts':'IND','jaguars':'JAX','chiefs':'KC','raiders':'LV','chargers':'LAC','rams':'LAR','dolphins':'MIA','vikings':'MIN','patriots':'NE','saints':'NO','jets':'NYJ','eagles':'PHI','steelers':'PIT','fortyniners':'SF','seahawks':'SEA','buccaneers':'TB','titans':'TEN','washington':'WSH'}
-
 while True:
-    data = wf.readframes(4000)
+    data = wf.readframes(6000)
     if len(data) == 0:
         break
     if rec.AcceptWaveform(data):
         print(rec.Result())
-        voiceTeamSelect = rec.Result()
+        
+        #voiceTeamSelect = rec.Result()
     else:
         print(rec.PartialResult())
-        voiceTeamSelect = rec.PartialResult()
+        #voiceTeamSelect = rec.PartialResult()
 
-print(rec.FinalResult())
+#print(rec.FinalResult())
 
 voiceTeamSelect = rec.FinalResult()
 print(voiceTeamSelect)
 
-#voiceTeamSelect = 'giants'
+voiceTeamSelect = 'giants'
 
 if(nameToABV.get(voiceTeamSelect)==None):
     print("Invalid Team")
@@ -59,6 +59,13 @@ else:
             #print(game["shortName"].split())
         opponentABV = matchupDict[teamABV]
         print('Next Week Matchup against: '+opponentABV)
+        
+        
+        
+        os.system("espeak -ven+f2 -k5 -s150 --stdout  "+list(nameToABV.keys())[list(nameToABV.values()).index(teamABV)]+" | aplay")
+        os.system("espeak -ven+f2 -k5 -s150 --stdout  "+"versus"+" | aplay")
+        os.system("espeak -ven+f2 -k5 -s150 --stdout  "+list(nameToABV.keys())[list(nameToABV.values()).index(opponentABV)]+" | aplay")
+
         #print(matchupDict)
         
         #print(r.json()["sports"][0]["leagues"][0]["events"][1]["shortName"])
