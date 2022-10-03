@@ -160,19 +160,21 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
-The main issue I ran into was involving the nflgame python package that I was planning to use. As I was setting it up, I found out the package is quite old and it had very minimal documentation. I kept running into an error that I tried debugging for a while but decided to switch gears. My next idea was to gather the NFL weekly data that I wanted by myself. Luckily I found a plain text webpage that held information for each week's games. Using the requests package I was able to access this site and scrape through to find the exact information I needed.
+
+The main issue I ran into was involving the nflgame python package that I was planning to use. As I was setting it up, I found out the package is quite old and it had very minimal documentation. I kept running into an error that I tried debugging for a while but decided to switch gears. My next idea was to gather the NFL weekly data that I wanted by myself. Luckily I found a plain text webpage that held information for each week's games. Using the requests package I was able to access this site and scrape through to find the exact information I needed. Once this was implemented I was successfully able to grab the team matchup data and it started working quite well.
+
+What unfortunately isn't working so well is the text to speech as the mic seems to not consistently pickup the team names I want. Sometimes it works and sometimes it doesn't.
 
 ### What worked well about the controller and what didn't?
 
-\*\**your answer here*\*\*
+Unfortunately I wasn't able to implement a controller specific to my design. I think the controller worked well for the accelerometer setup but I don't think it would be very useful for my NFL matchup retrieval program. I was really going for a design that was extremely simple and the user only had to speak to get a response. I understand though that having to start the program in terminal is not ideal so here is definitely where I would want to improve my design.
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
-\*\**your answer here*\*\*
+I think the WoZ automation of sensing the accelerometer highlights a good usage of perpetual data collection. Again, I'm not quite sure how to apply that to my idea. Maybe I could find a way to have my setup continuously seek verbal input and will provide even more information. Similar to that of Alexa, I think my device would be able to stay turned on long term and return any NFL weekly stats from the present as well as the past. I would need to do a bit more work on the controller end to implement this.
 
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
-\*\**your answer here*\*\*
+I could in theory save every recording of the speech input. This could create a very rich dataset of differing voices calling out team names. In theory this could be used to optimize the voice recognition algorithm. The only other sensing modality I can think of is either gesture or touch. Any buttons would help the user to dig a bit deeper into the stats of each NFL game.
 
