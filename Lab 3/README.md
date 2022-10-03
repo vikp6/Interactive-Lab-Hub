@@ -136,12 +136,16 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
+
 The most important improvement is reducing the verbage that the device will need to listen to. I've realized that the voice to text functionality is quite finnicky so I am reducing the interaction to having the user just say the NFL team name.
 
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
+
 Although I did not have time to implement it this time, including a joystick to manually select a team via the display would be useful. This is especially useful if the device is unable to register what team is being said by the user.
 
 3. Make a new storyboard, diagram and/or script based on these reflections.
+
+![Sketch2](./img/storyboard2.png "Storyboard 2")
 
 ## Prototype your system
 
@@ -153,6 +157,9 @@ The system should:
 *Document how the system works*
 
 *Include videos or screencaptures of both the system and the controller.*
+
+Video of how it works:
+https://drive.google.com/file/d/1Xbl69BFJ_A5HQFOLLwYVHEymPRgvt7Sh/view?usp=sharing
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
