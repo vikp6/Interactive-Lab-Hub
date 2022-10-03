@@ -136,7 +136,11 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
+The most important improvement is reducing the verbage that the device will need to listen to. I've realized that the voice to text functionality is quite finnicky so I am reducing the interaction to having the user just say the NFL team name.
+
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
+Although I did not have time to implement it this time, including a joystick to manually select a team via the display would be useful. This is especially useful if the device is unable to register what team is being said by the user.
+
 3. Make a new storyboard, diagram and/or script based on these reflections.
 
 ## Prototype your system
@@ -157,6 +161,7 @@ Answer the following:
 
 ### What worked well about the system and what didn't?
 \*\**your answer here*\*\*
+The main issue I ran into was involving the nflgame python package that I was planning to use. As I was setting it up, I found out the package is quite old and it had very minimal documentation. I kept running into an error that I tried debugging for a while but decided to switch gears. My next idea was to gather the NFL weekly data that I wanted by myself. Luckily I found a plain text webpage that held information for each week's games. Using the requests package I was able to access this site and scrape through to find the exact information I needed.
 
 ### What worked well about the controller and what didn't?
 
