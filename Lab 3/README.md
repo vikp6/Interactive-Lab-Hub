@@ -131,6 +131,9 @@ In the [demo directory](./demo), you will find an example Wizard of Oz project. 
 
 # Lab 3 Part 2
 
+Code for Part 2:
+https://github.com/vikp6/Interactive-Lab-Hub/tree/Fall2022/Lab%203/NFLScoreReader
+
 For Part 2, you will redesign the interaction with the speech-enabled device using the data collected, as well as feedback from part 1.
 
 ## Prep for Part 2
