@@ -176,9 +176,24 @@ Usually, sensors need to positioned in specific locations or orientations to mak
 
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
 
+![Sketch1](./img/partc1.png "partc1")
+![Sketch2](./img/partc2.png "partc2")
+![Sketch3](./img/partc3.png "partc3")
+
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
+A question that these sketches raised for me was how to integrate the wiring into the prototype. I think the sketches are useful for showing the high level use case but the details like wire management and location of parts is not really included. 
+
+Another question is how the sensors would actually be powered since the Pi is generally plugged into the wall. An external power source/battery pack for the Pi may be needed in certain cases where the idea is portable.
+
+
 **\*\*\*Pick one of these designs to prototype.\*\*\***
+
+I chose to prototype the Color Detector Bat
+
+![Sketch4](./img/IMG_4262.jpg "IMG_4262")
+![Sketch5](./img/IMG_4263.jpg "IMG_4263")
+![Sketch6](./img/IMG_4264.jpg "IMG_4264")
 
 
 ### Part D
@@ -221,11 +236,21 @@ Think about how you want to present the information about what your sensor is se
  
 **\*\*\*Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.\*\*\***
 
+![Sketch7](./img/partd1.png "partd1")
+
+*Two more sketches in progress, will be included in Part 2*
+
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
+
+The feasibility of attaching the display to either cardboard or aluminimum foil isn't really shown in the sketches. Also, knowing that aluminum may be a conductive material, the feasibility of using it to "wrap" the display or button needs to be looked into. We don't want to have any shorts occurring. 
 
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
 
+I think the foil enclosure design is the best one to integrate into the color detector bat prototype.
+
 **\*\*\*Explain the rationale for the design.\*\*\*** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+
+The rationale is that the color detector needs to have a simple way to alert the user what color is being seen. Therefore having the display embedded right on the aluminum shell of the bat allows users to be indicated immediately.
 
 Build a cardbord prototype of your design.
 
