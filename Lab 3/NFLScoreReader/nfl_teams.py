@@ -38,7 +38,7 @@ while True:
 voiceTeamSelect = rec.FinalResult()
 print(voiceTeamSelect)
 
-voiceTeamSelect = 'giants'
+
 
 if(nameToABV.get(voiceTeamSelect)==None):
     print("Invalid Team")
