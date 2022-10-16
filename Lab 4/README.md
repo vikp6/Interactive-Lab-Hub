@@ -252,11 +252,6 @@ I think the foil enclosure design is the best one to integrate into the color de
 
 The rationale is that the color detector needs to have a simple way to alert the user what color is being seen. Therefore having the display embedded right on the aluminum shell of the bat allows users to be indicated immediately.
 
-Build a cardbord prototype of your design.
-
-**\*\*\*Document your rough prototype.\*\*\***
-
-
 LAB PART 2
 
 ### Part 2
@@ -299,4 +294,35 @@ Document all the prototypes and iterations you have designed and worked on! Agai
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
+
+Part 2 Submission
+Storyboard:
+
+[insert storyboard here]
+
+
+Rough Ideation for Looks like, Works like, Acts like:
+[insert image here]
+
+Prototype:
+I decided to continue with the color detector "wand" idea. For the prototype, the next thing I had to tackle was figuring out how to mount the RPi on to the bat in a way that wasn't too obtrusive. I thought of various ideas ranging in complexity from simply taping to designing some kind of 3D printed enclosure that could be mounted on a cylindrical surface. Ultimately, I decided to use the following materials, with string being the main "binding" element:
+
+[insert images of prototype here]
+
+
+After trying a few times, I finally got a prototype that is operational and look somewhat intriguing. I think that it is quite easy to 'use' from the user's perspective as it takes advantage of the tapered characteristics of the bat. This allows the user to know immediately that they will be holding it from the thinner end. 
+
+Code:
+The code was fairly straightforward as I basically merged color_test.py and one of the display scripts from Lab 2. A feature I wanted to add from Part 1 was a way for the user to immediately tell what color they are detecting. I did this by simply having the RPi display change into the color of what it is detecting. I thought this would be a cool way for the user to receive feedback from their sensing. The code can be found in color_detector.py
+
+Videos:
+
+[insert two videos]
+
+Improvements:
+One key factor I noticed is that the color sense is quite finnicky. It does detect colors somewhat accurately but it kind of requires the object to be at a specific distance from it. I think upgrading to a more dedicated color sensor would help make the reading results more accurate.
+
+Also, I would want to increase the instant feedback capabilities like maybe wrapping the bat in LED's that changed to the detected color. Another idea I had it incorporating a Bluetooth Module that could then send to an App the RGB values which can be used for various purposes.
+
+A limitation I would want to address is that the current iteration is tethered to a wall outlet since I didn't use a battery pack for the RPi. I think the next version would have to take this into account which may lead me to design a custom 3D printed bat rather than using my own mini Phillies bat. 
 
