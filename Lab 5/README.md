@@ -102,6 +102,21 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 
 **\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
 
+![Contour](./img/contours.png "contours")
+A wall corner detector that would help an autonomous module navigate around corners.
+
+![Face](./img/face.png "face")
+A headcounter in an elevator to count the number of people in it.
+
+![Flow](./img/flow.png "flow")
+A hand wave detector
+
+![Obj](./img/obj.png "obj")
+A ball throwing target game.
+
+
+
+
 #### Filtering, FFTs, and Time Series data. 
 Additional filtering and analysis can be done on the sensors that were provided in the kit. For example, running a Fast Fourier Transform over the IMU or Microphone data stream could create a simple activity classifier between walking, running, and standing.
 
@@ -138,7 +153,6 @@ For technical references:
 * [Frequency Analysis](https://en.wikipedia.org/wiki/Fast_Fourier_transform)
 
 
-**\*\*\*Include links to your code here, and put the code for these in your repo--they will come in handy later.\*\*\***
 
 ### (Optional Reading) Introducing Additional Concepts
 The following sections ([MediaPipe](#mediapipe) and [Teachable Machines](#teachable-machines)) are included for your own optional learning. **The associated scripts will not work on Fall 2022's Pi Image, so you can move onto part B.** However, you are welcome to try it on your personal computer. If this functionality is desirable for your lab or final project, we can help you get a different image running the last OS and version of python to make the following code work.
@@ -228,6 +242,7 @@ This might take a while to get fully installed. After installation, connect your
 * Fill out the ``Contextual Interaction Design Tool`` sheet.[Found here.](ThinkingThroughContextandInteraction.png)
 
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
+![Partb](./img/partb.png "partb")
 
 ### Part C
 ### Test the interaction prototype
