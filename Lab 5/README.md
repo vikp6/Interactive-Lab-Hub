@@ -254,24 +254,51 @@ For example:
 1. When it fails, why does it fail?
 1. Based on the behavior you have seen, what other scenarios could cause problems?
 
+1.	It does what it’s supposed to do when the face has been detected. Generally, the face should be fairly unobstructed for the eyes to be identified properly.
+2.	It doesn’t necessarily “fail” but it is inaccurate when I wear glasses. It seems to detect more than two eyes at times when there is something in the way between the camera and my eyes.
+3.	It probably fails because the eye detection looks for a specific parameter that may be getting replicated by the glasses possibly through a reflection.
+4.	Other scenarios include wearing masks or in very dark light.
+
+
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
 1. How bad would they be impacted by a miss classification?
 1. How could change your interactive system to address this?
 1. Are there optimizations you can try to do on your sense-making algorithm.
 
+1.	They may be aware of the uncertainties if they notice on the screen the multiple detections.
+2.	A miss classification would really only result in an inconvenience.
+3.	I could change it by using a better quality camera that isn’t affected by external light.
+4.	There may be a way in the algorithm to check for ony two eyes rather than unlimited.
+
+
 ### Part D
 ### Characterize your own Observant system
+
+X = eye open detector
 
 Now that you have experimented with one or more of these sense-making systems **characterize their behavior**.
 During the lecture, we mentioned questions to help characterize a material:
 * What can you use X for?
+- sleep monitoring, driver awareness, biolocks
+
 * What is a good environment for X?
+- Anywhere with decent lighting
+
 * What is a bad environment for X?
+- Anywhere dark would not work
+
 * When will X break?
+- If there are multiple eyes or just unclear face detected
+
 * When it breaks how will X break?
+- Both the Hue data and eye open/close data will be inaccurate
+
 * What are other properties/behaviors of X?
+- Other properties that can be added include a eye iris color changer
+
 * How does X feel?
+- I think it's a pretty cool way to understand how modern facial recognition systems work.
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
@@ -279,4 +306,14 @@ During the lecture, we mentioned questions to help characterize a material:
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
-**\*\*\*Include a short video demonstrating the finished result.\*\*\***
+I decided to change my design from Part 1. Instead of a ball in target object detection game, I decided to switch to a eyes open or closed detector. I thought this would be quite interesting since many day to day items utilize some kind of eye detection algorithm such as Face ID.
+
+The above parts C and D have been altered to reflect on this project change.
+
+Here is the video of my interaction:
+https://drive.google.com/file/d/1HqkGLxi6P6mQ3sIUGFT84s2m9N3lAP0A/view?usp=sharing
+
+
+The live video detects the eyes as well as the center of the eye indicated by a white dot. Depending on whether the eyes are open or closed, and indication in the top left corner will show up. The live terminal window is also outputting the Hue value of the pupil/iris region based on the placement of the center white dot. You will notice that the eye open/close detection is a bit finnicky mainly due to the program detecting extra "eyes" due to my glasses. My assumption for this is because 
+
+
