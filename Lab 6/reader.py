@@ -20,7 +20,8 @@ def on_connect(client, userdata, flags, rc):
 def on_message(cleint, userdata, msg):
 	print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
 	# you can filter by topics
-	# if msg.topic == 'IDD/some/other/topic': do thing
+	if msg.topic == 'IDD/an464vikp6/joystick':
+        print('hi')
 
 
 # Every client needs a random ID
