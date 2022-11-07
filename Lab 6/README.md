@@ -1,6 +1,7 @@
 # Little Interactions Everywhere
 
-**NAMES OF COLLABORATORS HERE**
+1. Vikram Pandian (vip6@cornell.edu)
+2. Abhishek Nair (an464@cornell.edu)
 
 ## Prep
 
@@ -30,7 +31,7 @@ E) [Make It Your Own](#part-)
 ### Part A
 ### MQTT
 
-MQTT is a lightweight messaging portal invented in 1999 for low bandwidth networks. It was later adopted as a defacto standard for a variety of [Internet of Things (IoT)](https://en.wikipedia.org/wiki/Internet_of_things) devices. 
+MQTT is a lightweight messaging portal invented in 1999 for low bandwidth networks. It was later adopted as a defacto standard for a variety of [Internet of Things (IoT)](https://en.wikipedia.org/wiki/Internet_of_things) devices.
 
 #### The Bits
 
@@ -38,7 +39,7 @@ MQTT is a lightweight messaging portal invented in 1999 for low bandwidth networ
 * **Client** - A device that subscribes or publishes information to/on the network.
 * **Topic** - The location data gets published to. These are *hierarchical with subtopics*. For example, If you were making a network of IoT smart bulbs this might look like `home/livingroom/sidelamp/light_status` and `home/livingroom/sidelamp/voltage`. With this setup, the info/updates of the sidelamp's `light_status` and `voltage` will be store in the subtopics. Because we use this broker for a variety of projects you have access to read, write and create subtopics of `IDD`. This means `IDD/ilan/is/a/goof` is a valid topic you can send data messages to.
 *  **Subscribe** - This is a way of telling the client to pay attention to messages the broker sends out on the topic. You can subscribe to a specific topic or subtopics. You can also unsubscribe. Following the previouse example of home IoT smart bulbs, subscribing to `home/livingroom/sidelamp/#` would give you message updates to both the light_status and the voltage.
-* **Publish** - This is a way of sending messages to a topic. Again, with the previouse example, you can set up your IoT smart bulbs to publish info/updates to the topic or subtopic. Also, note that you can publish to topics you do not subscribe to. 
+* **Publish** - This is a way of sending messages to a topic. Again, with the previouse example, you can set up your IoT smart bulbs to publish info/updates to the topic or subtopic. Also, note that you can publish to topics you do not subscribe to.
 
 
 **Important note:** With the broker we set up for the class, you are limited to subtopics of `IDD`. That is, to publish or subcribe, the topics will start with `IDD/`. Also, setting up a broker is not much work, but for the purposes of this class, you should all use the broker we have set up for you!
@@ -96,6 +97,16 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
 
+1. LED Control: using a pair of Raspberry Pis, one could send a message to the other to trigger an LED light event. For exmaple, a message (JSON message: {ledstatus: on}) could be sent from one Pi to another receiver Pi to turn on a LED light connected to it.
+
+2. Smart Shopping List: using a webcam placed in a fridge, a connected sender Pi can detect the number of eggs and bread currently in the fridge using computer vision to send it to a receiver Pi with a grocery list on a connected display displaying the number of eggs and bread currently in the fridge.
+
+3. Greenhouse Temperature Monitor: using a temperature sensor, a sender Pi can send the current temperature in a greenhouse to a receiver Pi with a display connected to it to display the current temperature of the greenhouse. The receiver Pi can also send a message to the sender Pi to turn on a fan to cool down the greenhouse if the temperature is too high.
+
+4. Smart Doorbell: using a camera, a sender Pi can detect when someone is at the door and send a message to a receiver Pi with a display connected to it to display a message saying that someone is at the door along with the number of people detected. The receiver Pi can also send messages to the doorbell pi to output messages to the person at the door with text to speech.
+
+5. GPS enabled Run Tracker: using a GPS sensor, a sender pi can stream the current location of a runner to a receiver pi located at the runner's home. The receiver pi is booted using Ubuntu and connected to a monitor which can be used to analyze the runs in great detail later on based on the data saved on the receiver pi.
+
 ### Part C
 ### Streaming a Sensor
 
@@ -147,7 +158,7 @@ By running the script, wou will find the two squares on the display. Half is sho
 
 You may ask "but what if I missed class?" Am I not admitted into the collective enlightenment of the *OneColor*?
 
-Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-true-colornet.glitch.me/) and become one with the ColorNet on the inter-webs. Glitch is a great tool for prototyping sites, interfaces and web-apps that's worth taking some time to get familiar with if you have a chance. Its not super pertinent for the class but good to know either way. 
+Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-true-colornet.glitch.me/) and become one with the ColorNet on the inter-webs. Glitch is a great tool for prototyping sites, interfaces and web-apps that's worth taking some time to get familiar with if you have a chance. Its not super pertinent for the class but good to know either way.
 
 **\*\*\*Can you set up the script that can read the color anyone else publish and display it on your screen?\*\*\***
 
@@ -167,3 +178,100 @@ Find at least one class (more are okay) partner, and design a distributed applic
 
 <!--**\*\*\*5. BONUS (Wendy didn't approve this so you should probably ignore it)\*\*\*** get the whole class to run your code and make your distributed system BIGGER.-->
 
+# Remote Artist
+
+## System Design
+Over the past few years, distributed computing has become a hot topic in the tech industry. The rise of cloud computing and the Internet of Things has made it possible to build distributed systems that are both powerful and accessible. In this lab, we will explore the basics of distributed computing by building a distributed system.
+
+With remote robotic surgery, we can now perform surgery on patients from anywhere in the world. This lab takes that concept as inspiration to remotely draw diagrams and figures using the input of a sender Raspberry Pi to a receiver Raspberry Pi that renders the drawing on the receiver's screen.
+
+Essentially, a sender Raspberry Pi is connected to a joystick and reads the joystick's input. The sender then streams the joystick's input to the receiver Raspberry Pi, which then uses the input to draw on the receiver's screen. The drawing is rendered on the screen by accurately mapping the joystick input to the display based on it's appropriate dimensions. The sender and receiver are connected through MQTT, a protocol that allows for communication between devices.
+
+## System Architecture
+
+Below is a figure depicting the architecture of said system.
+
+<p align="center">
+  <img src="https://github.com/abhisheknair10/Interactive-Lab-Hub/blob/Fall2022/Lab%206/Part%20E/arch.png" height="600" />
+</p>
+
+## System Implementation and User Interface Considerations
+
+The implementation of this system is available at [Remote Artist](https://github.com/abhisheknair10/Interactive-Lab-Hub/tree/Fall2022/Lab%206/Part%20E) in the subdirectory `Lab 6/Part E/`.
+
+The technical steps involved are listed below:
+
+1. Sender - connect to the MQTT broker
+
+```python
+client.connect(
+    'farlab.infosci.cornell.edu',
+    port=8883
+)
+```
+
+2. Sender - read data from Joystick
+
+```python
+myJoystick.begin()
+x = myJoystick.horizontal
+y = myJoystick.vertical
+button = myJoystick.button
+```
+
+3. Sender - publish data to MQTT broker
+
+```python
+client.publish(
+    'an464vip6/joystick',
+    str(
+      {
+            "x": x,
+            "y": y,
+            "button": button
+        }
+    )
+)
+```
+
+4. Receiver - connect to the MQTT broker, subscribe to the topic and read the data
+
+```python
+if msg.topic=='IDD/an464vip6/joystick':
+    data = ast.literal_eval(msg.payload.decode('UTF-8'))
+
+    xVal = data['x']
+    yVal = data['y']
+    buttonVal = data['button']
+```
+
+5. Convert scale of joystick to display and render pixel on display
+
+```python
+width=135
+height=240
+xRes = int(width*int(xVal)/1023)
+yRes = int(height*int(yVal)/1023)
+display.pixel(xRes,yRes,color565(31, 63, 31))
+display.pixel(xRes+1,yRes,color565(31, 63, 31))
+display.pixel(xRes-1,yRes,color565(31, 63, 31))
+display.pixel(xRes,yRes+1,color565(31, 63, 31))
+display.pixel(xRes,yRes-1,color565(31, 63, 31))
+display.pixel(xRes+1,yRes+1,color565(31, 63, 31))
+display.pixel(xRes-1,yRes-1,color565(31, 63, 31))
+display.pixel(xRes+1,yRes-1,color565(31, 63, 31))
+display.pixel(xRes-1,yRes+1,color565(31, 63, 31))
+```
+
+6. Draw something with system
+
+
+The joystick is a very obvious and intuitive tool to work with by moving it up, down, left and right. Based on this, the user should pretty easily know how to interact with the system.
+
+## Working Prototype
+
+Below is a link to a video of the working prototype.
+
+[Demonstration 1](https://drive.google.com/file/d/1queNMKs1cklf2GTSqMuZLQL4tcB8RdmQ/view?usp=sharing)
+
+[Demonstration 2](https://drive.google.com/file/d/1T3NX9fjoG0vo3Tu7-GH0dXscbHsRcLEl/view?usp=sharing)
